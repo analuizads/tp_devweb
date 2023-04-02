@@ -4,55 +4,609 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nome da loja</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />
+    <link rel="stylesheet" href= "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 </head>
-<body>
-    <!-- Cabeçalho -->
-    <header>
 
-        <div class="left-container"> 
-            <img class="logo" src="https://assets.turbologo.com/blog/pt/2019/11/19133630/puma-logo-cover.png" />
-        </div>
+<body class="px-5">
 
-        <div class="right-container">
-            <div class="top">
-                <spam class="message"> Welcome, Guest! </spam>
-                <nav class="links">
-                    <ul>
-                        <li>Sign in &nbsp;</li>
-                        <li> | &nbsp </li>
-                        <li>Register &nbsp </li>
-                        <li> | &nbsp </li>
-                        <li>My account &nbsp </li>
-                        <li> | &nbsp </li>
-                        <li> Track order</li>
-                    </ul>
-                </nav>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
+
+    <header class="container-fluid mt-3 bg-light">
+        <div class="row">
+            <div id="logo" class="col-md-2 p-2">
+                <img src="https://source.unsplash.com/random/200x120?id=1">
             </div>
-
-            <div class="bottom">
-                <div class="search">
-                    <input type="text" class="texto_pesquisa"
-                    placeholder="Search for a product, category, sellers or brand">
-                    <button type="submit">&#128269; Search</button>
-                </div>
-                <div class="info-cart-container">
-                    <div class="info">
-                        <p> Cash on Delivery  |  30 Day Return</p>
-                        <p> 24/7 Customer Service <strong> 1800 00 11 22</strong> </p>
+            <div id="left-side" class="col-md-5">
+                <div class="container-fluid h-100 w-100">
+                    <div class="row h-50 align-items-center">
+                        <span>Welcome, Guest!</span>
                     </div>
-                    <button class="cart">
-                            <img src="images/carrinho-de-compras.png">
-                            <span> MY CART </span>
-                    </button>
-
+                    <div class="row w-100">
+                        <form class="d-flex w-100">
+                            <input class="form-control me-2" type="search" placeholder="Search for a product, category, sellers or brand" aria-label="Search">
+                            <button class="btn btn-outline-danger" type="submit">Search</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div id="right-side" class="col-md-5">
+                <div class="container-fluid h-100">
+                    <div class="row justify-content-end">
+                        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                            <div class="container-fluid">
+                              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                              </button>
+                              <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                                <div class="navbar-nav">
+                                  <a class="nav-link active" aria-current="page" href="#">Home</a>
+                                  <a class="nav-link" href="#">Sign in</a>
+                                  <a class="nav-link" href="#">Register</a>
+                                  <a class="nav-link" href="#">My account</a>
+                                  <a class="nav-link" href="#">Track order</a>
+                                </div>
+                              </div>
+                            </div>
+                          </nav>
+                    </div>
+                    <div class="row">
+                        <div class="container p-2">
+                            <div class="row">
+                                <div class="col-8">
+                                    <span> Cash on delivery  |  30 Day Return </span>
+                                    <span>24/7 Customer Service <strong>1800 00 11 22 </strong></span>
+                                </div>
+                                <div class="col-4">
+                                    <button type="button" class="btn btn-danger flex-column d-flex justify-content-center">
+                                        <img class="align-self-center" src="images/carrinho-de-compras.png" width="20px">
+                                        <span>MY CART</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-
     </header>
-    
 
- 
+    <div class="container-fluid p-2">
+        <div class="row">
+            <div class="col-md-4 p-4 border border-primary d-flex flex-column">
+                <span class="title_quickfind"> <strong>Quick Find - Choose product</strong></span>
+                <span> Find the right product at the right price </span>
+                <select class="form-select mt-3" aria-label="Default select example">
+                    <option selected>Type</option>
+                </select>
+                <select class="form-select mt-3" aria-label="Default select example">
+                    <option selected>Brand</option>
+                </select>
+                <select class="form-select mt-3" aria-label="Default select example">
+                    <option selected>Category</option>
+                </select>
+                <div class="filtro_preco mt-3">
+                    <span> $</span>
+                    <input type="text" class="inicial w-20"
+                    placeholder="From">
+                    <span> $</span>
+                    <input type="text" class="final"
+                    placeholder="To">
+                </div>
+                <button type="button" class="btn btn-danger flex-column d-flex justify-content-center mt-3"> SEARCH </button>
+            </div>
+
+            <div class="col-md-8">
+                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img class="d-block w-100" src="https://source.unsplash.com/random/2000x800?id=2" alt="Primeiro Slide">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="https://source.unsplash.com/random/2000x800?id=3" alt="Segundo Slide">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="https://source.unsplash.com/random/2000x800?id=4" alt="Terceiro Slide">
+                    </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Anterior</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Próximo</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid mt-3 mb-3">
+
+        <div class="row">
+            <div class="col-md-9">
+                <main class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="product_item w-100 h-100 border">
+
+                                <div class="mix sale" style="display: inline-block;" data-bound="">
+                                    <div class="single_product">
+                                        <div class="product_image">
+                                            <img src="https://source.unsplash.com/random/285x190?id=5" alt="">
+                                            <div class="new_badge">New</div>
+                                            <div class="box-content">
+                                                
+                                                <a href="#"><i class="fa fa-cart-plus"></i></a>
+                                                <a href="#"><i class="fa fa-search"></i></a>
+                                            </div>										
+                                        </div>
+                                
+                                        <div class="product_btm_text">
+                                            <h4><a href="#">Product Title</a></h4>
+                                            <div class="p_rating">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                            </div>										
+                                            <span class="price">$123.00</span>
+                                
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="product_item w-100 h-100">
+
+                                <div class="mix sale" style="display: inline-block;" data-bound="">
+                                    <div class="single_product">
+                                        <div class="product_image">
+                                            <img src="https://source.unsplash.com/random/285x190?id=6" alt="">
+                                            <div class="new_badge">New</div>
+                                            <div class="box-content">
+                                                
+                                                <a href="#"><i class="fa fa-cart-plus"></i></a>
+                                                <a href="#"><i class="fa fa-search"></i></a>
+                                            </div>										
+                                        </div>
+                                
+                                        <div class="product_btm_text">
+                                            <h4><a href="#">Product Title</a></h4>
+                                            <div class="p_rating">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                            </div>										
+                                            <span class="price">$123.00</span>                               
+                                        </div>
+                                    </div>                                  
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="product_item w-100 h-100">
+
+                                <div class="mix sale" style="display: inline-block;" data-bound="">
+                                    <div class="single_product">
+                                        <div class="product_image">
+                                            <img src="https://source.unsplash.com/random/285x190?id=7" alt="">
+                                            
+                                            <div class="box-content">
+                                                
+                                                <a href="#"><i class="fa fa-cart-plus"></i></a>
+                                                <a href="#"><i class="fa fa-search"></i></a>
+                                            </div>										
+                                        </div>
+                                
+                                        <div class="product_btm_text">
+                                            <h4><a href="#">Product Title</a></h4>
+                                            <div class="p_rating">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                            </div>										
+                                            <span class="price">$123.00</span>                               
+                                        </div>
+                                    </div>  
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="product_item w-100 h-100">
+
+                                <div class="mix sale" style="display: inline-block;" data-bound="">
+                                    <div class="single_product">
+                                        <div class="product_image">
+                                            <img src="https://source.unsplash.com/random/285x190?id=8" alt="">
+                                            
+                                            <div class="box-content">
+                                                
+                                                <a href="#"><i class="fa fa-cart-plus"></i></a>
+                                                <a href="#"><i class="fa fa-search"></i></a>
+                                            </div>										
+                                        </div>
+                                
+                                        <div class="product_btm_text">
+                                            <h4><a href="#">Product Title</a></h4>
+                                            <div class="p_rating">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                            </div>										
+                                            <span class="price">$123.00</span>                               
+                                        </div>
+                                    </div>  
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="product_item w-100 h-100">
+
+                                <div class="mix sale" style="display: inline-block;" data-bound="">
+                                    <div class="single_product">
+                                        <div class="product_image">
+                                            <img src="https://source.unsplash.com/random/285x190?id=9" alt="">
+                                            
+                                            <div class="box-content">
+                                                
+                                                <a href="#"><i class="fa fa-cart-plus"></i></a>
+                                                <a href="#"><i class="fa fa-search"></i></a>
+                                            </div>										
+                                        </div>
+                                
+                                        <div class="product_btm_text">
+                                            <h4><a href="#">Product Title</a></h4>
+                                            <div class="p_rating">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                            </div>										
+                                            <span class="price">$123.00</span>                               
+                                        </div>
+                                    </div>  
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="product_item w-100 h-100 border">
+
+                                <div class="mix sale" style="display: inline-block;" data-bound="">
+                                    <div class="single_product">
+                                        <div class="product_image">
+                                            <img src="https://source.unsplash.com/random/285x190?id=10" alt="">
+                                            
+                                            <div class="box-content">
+                                                
+                                                <a href="#"><i class="fa fa-cart-plus"></i></a>
+                                                <a href="#"><i class="fa fa-search"></i></a>
+                                            </div>										
+                                        </div>
+                                
+                                        <div class="product_btm_text">
+                                            <h4><a href="#">Product Title</a></h4>
+                                            <div class="p_rating">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                            </div>										
+                                            <span class="price">$123.00</span>                               
+                                        </div>
+                                    </div>  
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="product_item w-100 h-100">
+
+                                <div class="mix sale" style="display: inline-block;" data-bound="">
+                                    <div class="single_product">
+                                        <div class="product_image">
+                                            <img src="https://source.unsplash.com/random/285x190?id=11" alt="">
+                                            
+                                            <div class="box-content">
+                                                
+                                                <a href="#"><i class="fa fa-cart-plus"></i></a>
+                                                <a href="#"><i class="fa fa-search"></i></a>
+                                            </div>										
+                                        </div>
+                                
+                                        <div class="product_btm_text">
+                                            <h4><a href="#">Product Title</a></h4>
+                                            <div class="p_rating">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                            </div>										
+                                            <span class="price">$123.00</span>                               
+                                        </div>
+                                    </div>  
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="product_item w-100 h-100">
+
+                                <div class="mix sale" style="display: inline-block;" data-bound="">
+                                    <div class="single_product">
+                                        <div class="product_image">
+                                            <img src="https://source.unsplash.com/random/285x190?id=12" alt="">
+                                            
+                                            <div class="box-content">
+                                                
+                                                <a href="#"><i class="fa fa-cart-plus"></i></a>
+                                                <a href="#"><i class="fa fa-search"></i></a>
+                                            </div>										
+                                        </div>
+                                
+                                        <div class="product_btm_text">
+                                            <h4><a href="#">Product Title</a></h4>
+                                            <div class="p_rating">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                            </div>										
+                                            <span class="price">$123.00</span>                               
+                                        </div>
+                                    </div>  
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="product_item w-100 h-100">
+
+                                <div class="mix sale" style="display: inline-block;" data-bound="">
+                                    <div class="single_product">
+                                        <div class="product_image">
+                                            <img src="https://source.unsplash.com/random/285x190?id=13" alt="">
+                                            
+                                            <div class="box-content">
+                                                
+                                                <a href="#"><i class="fa fa-cart-plus"></i></a>
+                                                <a href="#"><i class="fa fa-search"></i></a>
+                                            </div>										
+                                        </div>
+                                
+                                        <div class="product_btm_text">
+                                            <h4><a href="#">Product Title</a></h4>
+                                            <div class="p_rating">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                            </div>										
+                                            <span class="price">$123.00</span>                               
+                                        </div>
+                                    </div>  
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </main>
+
+            </div>
+            <div class="col-md-3">
+                <div class="container border border-danger py-2">
+                    <span > <strong> Most Reviewed Items</strong></span>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="border-bottom border-danger mb-3" style="max-width: 540px;">
+                                <div class="row">
+                                  <div class="col-md-4 align-items-center d-flex">
+                                    <img src="https://source.unsplash.com/random/100x100?id=15" class="rounded-start ms-5" alt="...">
+                                  </div>
+                                  <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h6><a href="#">Product Title</a></h6>
+                                        <div class="p_rating">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                        </div>		
+                                        <p class="card-text"><small class="text-muted">$123.00</small></p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="border-bottom border-danger mb-3" style="max-width: 540px;">
+                                <div class="row">
+                                  <div class="col-md-4 align-items-center d-flex">
+                                    <img src="https://source.unsplash.com/random/100x100?id=15" class="rounded-start ms-5" alt="...">
+                                  </div>
+                                  <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h6><a href="#">Product Title</a></h6>
+                                        <div class="p_rating">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                        </div>		
+                                        <p class="card-text"><small class="text-muted">$123.00</small></p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="border-bottom border-danger mb-3" style="max-width: 540px;">
+                                <div class="row">
+                                  <div class="col-md-4 align-items-center d-flex">
+                                    <img src="https://source.unsplash.com/random/100x100?id=15" class="rounded-start ms-5" alt="...">
+                                  </div>
+                                  <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h6><a href="#">Product Title</a></h6>
+                                        <div class="p_rating">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                        </div>		
+                                        <p class="card-text"><small class="text-muted">$123.00</small></p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="border-bottom border-danger mb-3" style="max-width: 540px;">
+                                <div class="row">
+                                  <div class="col-md-4 align-items-center d-flex">
+                                    <img src="https://source.unsplash.com/random/100x100?id=15" class="rounded-start ms-5" alt="...">
+                                  </div>
+                                  <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h6><a href="#">Product Title</a></h6>
+                                        <div class="p_rating">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                        </div>		
+                                        <p class="card-text"><small class="text-muted">$123.00</small></p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="mb-3 pb-3" style="max-width: 540px;">
+                                <div class="row">
+                                  <div class="col-md-4 align-items-center d-flex">
+                                    <img src="https://source.unsplash.com/random/100x100?id=15" class="rounded-start ms-5" alt="...">
+                                  </div>
+                                  <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h6><a href="#">Product Title</a></h6>
+                                        <div class="p_rating">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                        </div>		
+                                        <p class="card-text"><small class="text-muted">$123.00</small></p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                <button class="btn btn-danger me-md-2 mb-2" type="button">See more</button>
+                              </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="border border-danger mt-4 d-flex flex-column p-3">
+                    <span> <strong> NewsLetter</strong></span>
+                    <span> Signup for newsletter!</span>
+                    <input id="input_newsletter" type="text" class="mt-2" >
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                        <button class="btn btn-danger me-md-2 mt-3" type="button">Join Now!</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid bg-light pt-5 pb-4">
+        <div class="row">
+            <div id="payment" class="col-md-3">
+                <h6 class="pb-2"> <strong>Payment Methods</strong></h6>
+                <img class="master" src="images/master 1.svg">
+                <img class="visa" src="images/visa.png">
+                <img class="paypal" src="images/paypal.png">
+                <img class="discover" src="images/discover.png">
+            </div>
+            <div id="quick_links" class="col-md-3">
+                <h6 class="pb-2"> <strong>Quick links</strong></h6>
+                <ul style="list-style: none; margin: 0; padding: 0;">
+                    <li> <a href="#" >Help </a></li>
+                    <li> <a href="#"> Shipping Policy</a></li>
+                    <li> <a href="#">Cancelation & Returns </a></li>
+                    <li> <a href="#"> FAQ </a></li>
+                    <li> <a href="#">Privacy Policy</a></li>
+                    <li> <a href="#"> Disclaimer</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <h6 class="pb-2"> <strong>Let's be social</strong></h6>
+                <nav class="btn_social">
+                    
+                    <ul style="list-style: none; margin: 0; padding: 0;">
+                        <li><a href="#" target="_blank" title="facebook"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#" target="_blank" title="instagram"><i class="fa fa-instagram"></i></a></li>
+                        <li><a href="#" target="_blank" title="youtube"><i class="fa fa-youtube"></i></a></li>
+                        <li><a href="#" target="_blank" title="youtube"><i class="fa fa-whatsapp"></i></a></li>
+                                     
+                    </ul>
+                 </nav>
+                
+            </div>
+            <div class="col-md-3 d-flex flex-column">
+                <h6 class="pb-2"> <strong>Contact us</strong></h6>
+                <span>Adress line one</span>
+                <span>Street No</span>
+                <span>Place</span>
+                <div>
+                    <img src="images/mail.svg">
+                    <span> <a href="#"> info@company.com </a> </span>
+                </div>
+                <div>
+                    <img src="images/phone.svg">
+                    <span> <strong>1800 4400 22</strong></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="container-fluid p-2">
+        <div class="row">
+            <div class="col-md-12 d-flex justify-content-center">
+                <img src="images/copyright.png" >
+                <span> 2001-2023 Ana Luiza Diniz </span>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </body>
+
 </html>
